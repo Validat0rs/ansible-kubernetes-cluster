@@ -5,6 +5,7 @@
 To setup a new worker node:
 
 ```console
+TARGET=<target> \
 DD_API_KEY=<dd_api_key> \
 MOUNT_POINT=<mount_point> \
 RAID_SETUP=<raid_setup> \
@@ -19,15 +20,31 @@ make worker
 
 where:
 
-| Param            | Description                                                                              | Required |
-|------------------|------------------------------------------------------------------------------------------|----------|
-| `<dd_api_key>` | DataDog API key. Only required if using DataDog. | `false` |
-| `<mount_point>` | Where to mount the storage for the worker node. | `true` |
-| `<raid_setup>` | Configure software RAID on the worker node. | `false` |
-| `<raid_md_device>` | The MD device to use for this RAID setup. Optional; only required if `RAID_SETUP=true` | `false` |
-| `<raid_level>` | The RAID level to use for this RAID setup. Optional; only required if `RAID_SETUP=true` | `false` |
-| `<raid_device_count>` | The number of physical devices to use for this RAID setup. Optional; only required if `RAID_SETUP=true` | `false` |
-| `<raid_devices>` | A list of physical devices to use for this RAID setup. Optional; only required if `RAID_SETUP=true` | `false` |
-| `<launch_daemons>` | Launch the chain daemons. | `false` |
-| `<launch_thornode>` | Launch a THORNode. | `false` |
+| Param                 | Description                                                                                             | Required |
+|-----------------------|---------------------------------------------------------------------------------------------------------|----------|
+| `<target>`            | The inventory target.                                                                                   | `true`   |
+| `<dd_api_key>`        | DataDog API key. Only required if using DataDog.                                                        | `false`  |
+| `<mount_point>`       | Where to mount the storage for the worker node.                                                         | `true`   |
+| `<raid_setup>`        | Configure software RAID on the worker node.                                                             | `false`  |
+| `<raid_md_device>`    | The MD device to use for this RAID setup. Optional; only required if `RAID_SETUP=true`                  | `false`  |
+| `<raid_level>`        | The RAID level to use for this RAID setup. Optional; only required if `RAID_SETUP=true`                 | `false`  |
+| `<raid_device_count>` | The number of physical devices to use for this RAID setup. Optional; only required if `RAID_SETUP=true` | `false`  |
+| `<raid_devices>`      | A list of physical devices to use for this RAID setup. Optional; only required if `RAID_SETUP=true`     | `false`  |
+| `<launch_daemons>`    | Launch the chain daemons.                                                                               | `false`  |
+| `<launch_thornode>`   | Launch a THORNode.                                                                                      | `false`  |
 
+e.g.:
+
+```console
+TARGET=my-worker-node \
+DD_API_KEY=0gdd04PXCn999CYNHd1mJ7lylKs5uMZk \
+MOUNT_POINT=/mnt/data \
+RAID_SETUP=true \
+RAID_MD_DEVICE=/dev/md4 \
+RAID_LEVEL=0 \
+RAID_DEVICE_COUNT=2 \
+RAID_DEVICES="/dev/sda /dev/sdb" \
+LAUNCH_DEAMONS=true \
+LAUNCH_THORNODE=true \
+make worker
+```
