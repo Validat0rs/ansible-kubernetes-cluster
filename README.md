@@ -11,7 +11,7 @@ _Ideally ansible should be installed via [pip](https://pip.pypa.io/en/stable/), 
 
 ## Assumptions
 
-This README assumes that you've already installed `debian` or `ubuntu` onto the target environment/s.
+This README assumes that you've already installed `ubuntu` onto the target environment/s.
 
 ## Setup
 
