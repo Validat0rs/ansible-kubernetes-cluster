@@ -3,5 +3,7 @@
   become: true
   roles:
     - common
+    - worker
+    - monitoring
   environment:
     PATH: "{{ path }}"

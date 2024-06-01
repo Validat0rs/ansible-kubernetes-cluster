@@ -4,3 +4,6 @@
 [submodule "roles/worker"]
 	path = roles/worker
 	url = https://github.com/Validat0rs/ansible-thorchain-roles-kubernetes-worker
+[submodule "roles/monitoring"]
+	path = roles/monitoring
+	url = https://github.com/Validat0rs/ansible-thorchain-roles-monitoring
