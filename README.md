@@ -32,3 +32,9 @@ git submodule update --init
 ```console
 ansible-galaxy collection install community.general kubernetes.core
 ```
+
+## Types
+
+The following types are supported:
+
+- [Worker](WORKER.md)
