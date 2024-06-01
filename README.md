@@ -1,6 +1,6 @@
 # validat0rs/ansible-thorchain-kubernetes-cluster
 
-An Ansible playbook for configuring a new kubernetes cluster for THORChain.
+An Ansible playbook for configuring a new kubernetes cluster worker for THORChain.
 
 ## Prerequisites
 
@@ -19,4 +19,16 @@ This README assumes that you've already installed `ubuntu` onto the target envir
 
 ```console
 cp inventory/hosts.example inventory/hosts
+```
+
+2. Install the required git submodule dependencies:
+
+```console
+git submodule update --init
+```
+
+3. Install the ansible `community.general` and `kubernetes.core` collections:
+
+```console
+ansible-galaxy collection install community.general kubernetes.core
 ```
