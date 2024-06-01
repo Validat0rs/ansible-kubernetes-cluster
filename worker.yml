@@ -1,4 +1,4 @@
-- name: THORChain k8s cluster worker
+- name: Cluster worker
   hosts: "{{ target }}"
   become: true
   roles:
