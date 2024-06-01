@@ -43,7 +43,7 @@ RAID_SETUP=true \
 RAID_MD_DEVICE=/dev/md4 \
 RAID_LEVEL=0 \
 RAID_DEVICE_COUNT=2 \
-RAID_DEVICES="/dev/sda /dev/sdb" \
+RAID_DEVICES="/dev/sda,/dev/sdb" \
 LAUNCH_DEAMONS=true \
 LAUNCH_THORNODE=true \
 make worker
