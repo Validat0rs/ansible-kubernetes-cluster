@@ -10,9 +10,5 @@ ifdef LAUNCH_DEAMONS
 	LAUNCH_DEAMONS_OPTS = '-e launch_daemons=$(LAUNCH_DEAMONS)'
 endif
 
-ifdef LAUNCH_THORNODE
-	LAUNCH_THORNODE_OPTS = '-e launch_thornode=$(LAUNCH_THORNODE)'
-endif
-
 worker:
-	@ansible-playbook -i inventory/hosts -e target=$(TARGET) -e cluster_name=$(CLUSTER_NAME) -e dd_api_key=$(DD_API_KEY) -e mount_point=$(MOUNT_POINT) $(RAID_OPTS) $(LAUNCH_DEAMONS_OPTS) $(LAUNCH_THORNODE_OPTS) $(TARGET_OPTS) worker.yml
+	@ansible-playbook -i inventory/hosts -e target=$(TARGET) -e cluster_name=$(CLUSTER_NAME) -e dd_api_key=$(DD_API_KEY) -e mount_point=$(MOUNT_POINT) $(RAID_OPTS) $(LAUNCH_DEAMONS_OPTS) $(TARGET_OPTS) worker.yml

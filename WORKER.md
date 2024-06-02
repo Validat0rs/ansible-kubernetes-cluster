@@ -16,6 +16,7 @@ RAID_DEVICE_COUNT=<raid_device_count> \
 RAID_DEVICES="<raid_devices>" \
 LAUNCH_DEAMONS=<launch_daemons> \
 LAUNCH_THORNODE=<launch_thornode> \
+NAMESPACE=<namespace> \
 make worker
 ```
 
@@ -33,7 +34,6 @@ where:
 | `<raid_device_count>` | The number of physical devices to use for this RAID setup. Optional; only required if `RAID_SETUP=true` | `false`  |
 | `<raid_devices>`      | A list of physical devices to use for this RAID setup. Optional; only required if `RAID_SETUP=true`     | `false`  |
 | `<launch_daemons>`    | Launch the chain daemons.                                                                               | `false`  |
-| `<launch_thornode>`   | Launch a THORNode.                                                                                      | `false`  |
 
 e.g.:
 
@@ -48,6 +48,5 @@ RAID_LEVEL=0 \
 RAID_DEVICE_COUNT=2 \
 RAID_DEVICES="/dev/sda,/dev/sdb" \
 LAUNCH_DEAMONS=true \
-LAUNCH_THORNODE=true \
 make worker
 ```
