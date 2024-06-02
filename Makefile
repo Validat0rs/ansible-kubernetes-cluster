@@ -11,4 +11,4 @@ ifdef LAUNCH_DEAMONS
 endif
 
 worker:
-	@ansible-playbook -i inventory/hosts -e target=$(TARGET) -e cluster_name=$(CLUSTER_NAME) -e dd_api_key=$(DD_API_KEY) -e mount_point=$(MOUNT_POINT) $(RAID_OPTS) $(LAUNCH_DEAMONS_OPTS) $(TARGET_OPTS) worker.yml
+	@ansible-playbook -i inventory/hosts -e target=$(TARGET) -e dd_api_key=$(DD_API_KEY) -e mount_point=$(MOUNT_POINT) $(RAID_OPTS) $(LAUNCH_DEAMONS_OPTS) $(TARGET_OPTS) worker.yml

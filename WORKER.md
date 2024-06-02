@@ -6,7 +6,6 @@ To setup a new worker node:
 
 ```console
 TARGET=<target> \
-CLUSTER_NAME=<cluster_name> \
 DD_API_KEY=<dd_api_key> \
 MOUNT_POINT=<mount_point> \
 RAID_SETUP=<raid_setup> \
@@ -15,8 +14,6 @@ RAID_LEVEL=<raid_level> \
 RAID_DEVICE_COUNT=<raid_device_count> \
 RAID_DEVICES="<raid_devices>" \
 LAUNCH_DEAMONS=<launch_daemons> \
-LAUNCH_THORNODE=<launch_thornode> \
-NAMESPACE=<namespace> \
 make worker
 ```
 
@@ -25,7 +22,6 @@ where:
 | Param                 | Description                                                                                             | Required |
 |-----------------------|---------------------------------------------------------------------------------------------------------|----------|
 | `<target>`            | The inventory target.                                                                                   | `true`   |
-| `<cluster_name>`      | The name of the cluster.                                                                                | `true`   |
 | `<dd_api_key>`        | DataDog API key. Only required if using DataDog.                                                        | `false`  |
 | `<mount_point>`       | Where to mount the storage for the worker node.                                                         | `true`   |
 | `<raid_setup>`        | Configure software RAID on the worker node.                                                             | `false`  |
