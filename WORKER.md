@@ -7,6 +7,7 @@ To setup a new worker node:
 ```console
 TARGET=<target> \
 DD_API_KEY=<dd_api_key> \
+DD_CLUSTER_NAME=<dd_cluster_name> \
 MOUNT_POINT=<mount_point> \
 RAID_SETUP=<raid_setup> \
 RAID_MD_DEVICE=<raid_md_device> \
@@ -26,6 +27,7 @@ where:
 |------------------------|---------------------------------------------------------------------------------------------------------|----------|
 | `<target>`             | The inventory target.                                                                                   | `true`   |
 | `<dd_api_key>`         | DataDog API key. Only required if using DataDog.                                                        | `false`  |
+| `<dd_cluster_name>`    | The name of the cluster. Only required if using DataDog.                                                | `false`  |
 | `<mount_point>`        | Where to mount the storage for the worker node.                                                         | `true`   |
 | `<raid_setup>`         | Configure software RAID on the worker node.                                                             | `false`  |
 | `<raid_md_device>`     | The MD device to use for this RAID setup. Optional; only required if `RAID_SETUP=true`                  | `false`  |
@@ -42,6 +44,7 @@ e.g.:
 ```console
 TARGET=my-worker-node \
 DD_API_KEY=0gdd04PXCn999CYNHd1mJ7lylKs5uMZk \
+DD_CLUSTER_NAME=my-cluster \
 MOUNT_POINT=/mnt/data \
 RAID_SETUP=true \
 RAID_MD_DEVICE=/dev/md4 \
