@@ -21,7 +21,7 @@ mdadm --create --verbose /dev/md6 --level=1 --raid-devices=2 /dev/nvme6n1 /dev/n
 2. Create the Raid 0 (stripe) array:
 
 ```console
-mdadm --create --verbose /dev/md7 --level=0 --raid-devices=2 /dev/md4 /dev/md5 /dev/md6 
+mdadm --create --verbose /dev/md7 --level=0 --raid-devices=3 /dev/md4 /dev/md5 /dev/md6 
 ```
 
 3. Format the array:
